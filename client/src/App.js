@@ -5,7 +5,7 @@ const App = () => {
     try {
       const res = await fetch("http://localhost:8080/api/test/")
       const data = await res.json()
-      setData(data.msg)
+      setData(data.message)
 
     } catch (error) {
       console.log(error)
