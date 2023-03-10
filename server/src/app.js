@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 require("dotenv").config();
 const details = require("./routes/details")
+const starter = require("./routes/starter")
 const cors = require('cors');
 app.use(express.json())
 app.use(cors({
@@ -12,8 +13,9 @@ app.use(cors({
 
 
 
-
+app.use('/', starter)
 app.use('/api/test', details)
+
 
 const startServer = async () => {
     const port = process.env.PORT || 5000
